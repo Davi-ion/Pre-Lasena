@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;   
+    color: #222;
+    padding-bottom: 50px;
+
+}
+
+.container{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+.nav{
+    position: fixed;
+    background-color: transparent;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all .3s ease-in-out;
+}
+
+.nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul {
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a  {
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 35px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav h1 {
+    font-size: 2.5rem;
+}
+
+.nav.active {
+    background-color: #40513B;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav.active a{
+    color: #000;
+}
+
+.nav.active .container{
+     padding: 10px 0;
+}
+
+.nav a.current ,.nav a:hover{
+    color: #BAD7E9;
+    font-weight: bold;
+}
+
+#active{
+    display: none;
+}
+
+.nav2{
+    visibility: hidden;
+}
+
+@media (max-width: 1148px) {
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    .wrapper{
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background:#40513B;
+        clip-path: circle(25px at calc(100% - 45px) 45px);
+        transition: all 0.3s ease-in-out;
+      }
+      #active:checked ~ .wrapper{
+        clip-path: circle(75%);
+        overflow: hidden;
+      }
+      .menu-btn{
+        position: absolute;
+        z-index: 2;
+        right: 20px;
+        /* left: 20px; */
+        top: 20px;
+        height: 50px;
+        width: 50px;
+        text-align: center;
+        line-height: 50px;
+        border-radius: 50%;
+        font-size: 20px;
+        color: #fff;
+        cursor: pointer;
+        background: #40513B;
+        transition: all 0.3s ease-in-out;
+      }
+      #active:checked ~ .menu-btn{
+        background: #fff;
+        color: #4158d0;
+      }
+      #active:checked ~ .menu-btn i:before{
+        content: "\f00d";
+      }
+      .nav2{
+        width: 100vw;
+        visibility: visible;
+      }
+      .nav .container{
+        justify-content: center;
+      }
+      .wrapper ul{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        list-style: none;
+        text-align: center;
+        display: grid;
+      }
+      .wrapper ul li{
+        margin: 15px 0;
+      }
+      .wrapper ul li a{
+        color: none;
+        text-decoration: none;
+        font-size: 30px;
+        font-weight: 500;
+        padding: 5px 30px;
+        color: #fff;
+        position: relative;
+        line-height: 50px;
+        transition: all 0.3s ease;
+      }
+      .wrapper ul li a:after{
+        position: absolute;
+        content: "";
+        background: #fff;
+        width: 100%;
+        height: 50px;
+        left: 0;
+        border-radius: 50px;
+        transform: scaleY(0);
+        z-index: -1;
+        transition: transform 0.3s ease;
+      }
+      .wrapper ul li a:hover:after{
+        transform: scaleY(1);
+      }
+      .wrapper ul li a:hover{
+        color: #4158d0;
+      }
+      input[type="checkbox"]{
+        display: none;
+      }
+}
+
+.hero{
+    background-image:  url('https://images.unsplash.com/photo-1627186338123-d1da2080d1fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3244&q=80');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: cover;
+    height: 100vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+    z-index: -2;
+}
+
+.hero::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.hero h1{
+    font-size: 46px;
+    margin: -20px 0 20px;
+}
+
+.hero p{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.content h2, .content h3 {
+    font-size: 150%;
+    margin: 20px 0;
+}
+
+.content p{
+    color: #555;
+    line-height: 30px;
+    letter-spacing: 1.2px;
+}
